@@ -10,6 +10,6 @@ process.stdin.on('data', data => {
         currentFile.write(data.toString());
     }
 });
-stdin.on('SIGNINT', ()=>process.exit());
-stdin.on('exit', ()=>stdout.write('the document was written.'));
-stdin.on('error', error => console.error(error));
+process.on('exit', ()=>stdout.write('The document was written.Bye!!!'));
+process.on('SIGNINT', ()=>process.exit());
+process.on('error', error => console.error(error));
